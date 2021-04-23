@@ -68,6 +68,9 @@
 			children = (
 				4814A6392626DAB400F2B107 /* Daydicate */,
 				484E3F3F2628134400EDAA05 /* Home */,
+				48EE67EB262EBC6E00F70982 /* Rewards */,
+				48FE072C2630FE2A009D185F /* StarRewards */,
+				48FE073326310E0B009D185F /* AddGoals */,
 				4814A6382626DAB400F2B107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,9 +106,6 @@
 		484E3F3F2628134400EDAA05 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				48FE073326310E0B009D185F /* AddGoals */,
-				48FE072C2630FE2A009D185F /* StarRewards */,
-				48EE67EB262EBC6E00F70982 /* Rewards */,
 				4814A63E2626DAB400F2B107 /* HomeViewController.swift */,
 				484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */,
 				487771F326297B9900B4D47F /* PlaceHolderViewController.swift */,
