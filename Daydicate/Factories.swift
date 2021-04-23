@@ -29,6 +29,7 @@ extension UIColor {
     static let backgroundWhite = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
     static let darkBlue = UIColor(red: 0/255, green: 169/255, blue: 255/255, alpha: 1.0)
     static let markGreen = UIColor(red: 0/255, green: 252/255, blue: 210/255, alpha: 1.0)
+    static let darkPink = UIColor(red: 255/255, green: 0/255, blue: 255/255, alpha: 1.0)
 
 }
 
