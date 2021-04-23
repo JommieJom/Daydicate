@@ -67,10 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				4814A6392626DAB400F2B107 /* Daydicate */,
-				484E3F3F2628134400EDAA05 /* Home */,
-				48EE67EB262EBC6E00F70982 /* Rewards */,
-				48FE072C2630FE2A009D185F /* StarRewards */,
-				48FE073326310E0B009D185F /* AddGoals */,
 				4814A6382626DAB400F2B107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +82,10 @@
 		4814A6392626DAB400F2B107 /* Daydicate */ = {
 			isa = PBXGroup;
 			children = (
+				484E3F3F2628134400EDAA05 /* Home */,
+				48FE072C2630FE2A009D185F /* StarRewards */,
+				48EE67EB262EBC6E00F70982 /* Rewards */,
+				48FE073326310E0B009D185F /* AddGoals */,
 				4814A64E2626DB1500F2B107 /* Files */,
 				4814A63A2626DAB400F2B107 /* AppDelegate.swift */,
 				484E3F3D262810A000EDAA05 /* Factories.swift */,
@@ -113,7 +113,6 @@
 				485493DB262B2E7200A31686 /* TileView.swift */,
 			);
 			name = Home;
-			path = Daydicate;
 			sourceTree = "<group>";
 		};
 		48EE67EB262EBC6E00F70982 /* Rewards */ = {
