@@ -8,22 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		4814A63B2626DAB400F2B107 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814A63A2626DAB400F2B107 /* AppDelegate.swift */; };
-		4814A63D2626DAB400F2B107 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814A63C2626DAB400F2B107 /* SceneDelegate.swift */; };
-		4814A63F2626DAB400F2B107 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814A63E2626DAB400F2B107 /* ViewController.swift */; };
-		4814A6422626DAB400F2B107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814A6402626DAB400F2B107 /* Main.storyboard */; };
+		4814A63F2626DAB400F2B107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814A63E2626DAB400F2B107 /* HomeViewController.swift */; };
 		4814A6442626DAB500F2B107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4814A6432626DAB500F2B107 /* Assets.xcassets */; };
 		4814A6472626DAB500F2B107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814A6452626DAB500F2B107 /* LaunchScreen.storyboard */; };
+		484E3F3E262810A000EDAA05 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E3F3D262810A000EDAA05 /* Factories.swift */; };
+		484E3F41262813CE00EDAA05 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */; };
+		485493DA262B2DEA00A31686 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485493D9262B2DEA00A31686 /* TileViewController.swift */; };
+		485493DC262B2E7200A31686 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485493DB262B2E7200A31686 /* TileView.swift */; };
+		487488F92630378300C5892B /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487488F82630378300C5892B /* RewardsGraphView.swift */; };
+		487771F426297B9900B4D47F /* PlaceHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487771F326297B9900B4D47F /* PlaceHolderViewController.swift */; };
+		488C2760263169F100348833 /* GoalFetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C275F263169F100348833 /* GoalFetchedResultsViewController.swift */; };
+		488C276426316A5300348833 /* GoalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C276326316A5300348833 /* GoalManager.swift */; };
+		488C276726316A8500348833 /* GoalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 488C276526316A8500348833 /* GoalModel.xcdatamodeld */; };
+		48EE67ED262EBCEA00F70982 /* RewardsTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE67EC262EBCEA00F70982 /* RewardsTileViewController.swift */; };
+		48EE67EF262EBD8200F70982 /* RewardsTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE67EE262EBD8200F70982 /* RewardsTileView.swift */; };
+		48EE67F1262EC00900F70982 /* BalanceRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EE67F0262EC00900F70982 /* BalanceRewardsView.swift */; };
+		48FE072E2630FE80009D185F /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE072D2630FE80009D185F /* StarAndPoints.swift */; };
+		48FE07302630FFA4009D185F /* StarRewardsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE072F2630FFA4009D185F /* StarRewardsRow.swift */; };
+		48FE073226310315009D185F /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FE073126310315009D185F /* StarRewardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4814A6372626DAB400F2B107 /* Daydicate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daydicate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4814A63A2626DAB400F2B107 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4814A63C2626DAB400F2B107 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4814A63E2626DAB400F2B107 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4814A6412626DAB400F2B107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4814A63E2626DAB400F2B107 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4814A6432626DAB500F2B107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4814A6462626DAB500F2B107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4814A6482626DAB500F2B107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		484E3F3D262810A000EDAA05 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		485493D9262B2DEA00A31686 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
+		485493DB262B2E7200A31686 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		487488F82630378300C5892B /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
+		487771F326297B9900B4D47F /* PlaceHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderViewController.swift; sourceTree = "<group>"; };
+		488C275F263169F100348833 /* GoalFetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalFetchedResultsViewController.swift; sourceTree = "<group>"; };
+		488C276326316A5300348833 /* GoalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalManager.swift; sourceTree = "<group>"; };
+		488C276626316A8500348833 /* GoalModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalModel.xcdatamodel; sourceTree = "<group>"; };
+		48EE67EC262EBCEA00F70982 /* RewardsTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTileViewController.swift; sourceTree = "<group>"; };
+		48EE67EE262EBD8200F70982 /* RewardsTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsTileView.swift; sourceTree = "<group>"; };
+		48EE67F0262EC00900F70982 /* BalanceRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRewardsView.swift; sourceTree = "<group>"; };
+		48FE072D2630FE80009D185F /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
+		48FE072F2630FFA4009D185F /* StarRewardsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsRow.swift; sourceTree = "<group>"; };
+		48FE073126310315009D185F /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				4814A6392626DAB400F2B107 /* Daydicate */,
+				484E3F3F2628134400EDAA05 /* Home */,
 				4814A6382626DAB400F2B107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +83,68 @@
 		4814A6392626DAB400F2B107 /* Daydicate */ = {
 			isa = PBXGroup;
 			children = (
+				4814A64E2626DB1500F2B107 /* Files */,
 				4814A63A2626DAB400F2B107 /* AppDelegate.swift */,
-				4814A63C2626DAB400F2B107 /* SceneDelegate.swift */,
-				4814A63E2626DAB400F2B107 /* ViewController.swift */,
-				4814A6402626DAB400F2B107 /* Main.storyboard */,
+				484E3F3D262810A000EDAA05 /* Factories.swift */,
+			);
+			path = Daydicate;
+			sourceTree = "<group>";
+		};
+		4814A64E2626DB1500F2B107 /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				4814A6432626DAB500F2B107 /* Assets.xcassets */,
 				4814A6452626DAB500F2B107 /* LaunchScreen.storyboard */,
 				4814A6482626DAB500F2B107 /* Info.plist */,
 			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		484E3F3F2628134400EDAA05 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48FE073326310E0B009D185F /* AddGoals */,
+				48FE072C2630FE2A009D185F /* StarRewards */,
+				48EE67EB262EBC6E00F70982 /* Rewards */,
+				4814A63E2626DAB400F2B107 /* HomeViewController.swift */,
+				484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */,
+				487771F326297B9900B4D47F /* PlaceHolderViewController.swift */,
+				485493D9262B2DEA00A31686 /* TileViewController.swift */,
+				485493DB262B2E7200A31686 /* TileView.swift */,
+			);
+			name = Home;
 			path = Daydicate;
+			sourceTree = "<group>";
+		};
+		48EE67EB262EBC6E00F70982 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				48EE67EC262EBCEA00F70982 /* RewardsTileViewController.swift */,
+				48EE67EE262EBD8200F70982 /* RewardsTileView.swift */,
+				48EE67F0262EC00900F70982 /* BalanceRewardsView.swift */,
+				487488F82630378300C5892B /* RewardsGraphView.swift */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		48FE072C2630FE2A009D185F /* StarRewards */ = {
+			isa = PBXGroup;
+			children = (
+				48FE072D2630FE80009D185F /* StarAndPoints.swift */,
+				48FE072F2630FFA4009D185F /* StarRewardsRow.swift */,
+				48FE073126310315009D185F /* StarRewardsView.swift */,
+			);
+			path = StarRewards;
+			sourceTree = "<group>";
+		};
+		48FE073326310E0B009D185F /* AddGoals */ = {
+			isa = PBXGroup;
+			children = (
+				488C275F263169F100348833 /* GoalFetchedResultsViewController.swift */,
+				488C276326316A5300348833 /* GoalManager.swift */,
+				488C276526316A8500348833 /* GoalModel.xcdatamodeld */,
+			);
+			path = AddGoals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +207,6 @@
 			files = (
 				4814A6472626DAB500F2B107 /* LaunchScreen.storyboard in Resources */,
 				4814A6442626DAB500F2B107 /* Assets.xcassets in Resources */,
-				4814A6422626DAB400F2B107 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +217,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4814A63F2626DAB400F2B107 /* ViewController.swift in Sources */,
+				488C276726316A8500348833 /* GoalModel.xcdatamodeld in Sources */,
+				488C2760263169F100348833 /* GoalFetchedResultsViewController.swift in Sources */,
+				487488F92630378300C5892B /* RewardsGraphView.swift in Sources */,
+				484E3F41262813CE00EDAA05 /* HomeHeaderView.swift in Sources */,
+				48EE67EF262EBD8200F70982 /* RewardsTileView.swift in Sources */,
+				485493DC262B2E7200A31686 /* TileView.swift in Sources */,
+				48FE072E2630FE80009D185F /* StarAndPoints.swift in Sources */,
+				484E3F3E262810A000EDAA05 /* Factories.swift in Sources */,
+				485493DA262B2DEA00A31686 /* TileViewController.swift in Sources */,
+				48FE07302630FFA4009D185F /* StarRewardsRow.swift in Sources */,
+				4814A63F2626DAB400F2B107 /* HomeViewController.swift in Sources */,
+				488C276426316A5300348833 /* GoalManager.swift in Sources */,
+				487771F426297B9900B4D47F /* PlaceHolderViewController.swift in Sources */,
 				4814A63B2626DAB400F2B107 /* AppDelegate.swift in Sources */,
-				4814A63D2626DAB400F2B107 /* SceneDelegate.swift in Sources */,
+				48FE073226310315009D185F /* StarRewardsView.swift in Sources */,
+				48EE67F1262EC00900F70982 /* BalanceRewardsView.swift in Sources */,
+				48EE67ED262EBCEA00F70982 /* RewardsTileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4814A6402626DAB400F2B107 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4814A6412626DAB400F2B107 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4814A6452626DAB500F2B107 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,6 +421,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		488C276526316A8500348833 /* GoalModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				488C276626316A8500348833 /* GoalModel.xcdatamodel */,
+			);
+			currentVersion = 488C276626316A8500348833 /* GoalModel.xcdatamodel */;
+			path = GoalModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4814A62F2626DAB400F2B107 /* Project object */;
 }

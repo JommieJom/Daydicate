@@ -8,30 +8,105 @@
 
 import UIKit
 
+class DaydicateViewController: UIViewController{
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func commonInit() {
+        
+    }
+    
+    func setTabBarImage(imageName: String, title: String) {
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: imageName, withConfiguration: configuration)
+        tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
+    }
+    
+}
+
+class ListViewController: DaydicateViewController {
+    override func viewDidLoad() {
+        view.backgroundColor = .systemPink
+        title = "List"
+    }
+    
+    override func commonInit() {
+        setTabBarImage(imageName: "list.bullet", title: "List")
+    }
+}
+
+class PlusViewController: DaydicateViewController {
+    override func viewDidLoad() {
+        view.backgroundColor = .systemGreen
+        title = "Add Task"
+    }
+    
+    override func commonInit() {
+        setTabBarImage(imageName: "plus.circle.fill", title: "Add Task")
+    }
+}
+
+class RosetteViewController: DaydicateViewController {
+    override func viewDidLoad() {
+        view.backgroundColor = .systemIndigo
+        title = "Rosette"
+    }
+    
+    override func commonInit() {
+        setTabBarImage(imageName: "rosette", title: "Rosette")
+    }
+}
+
+class PersonViewController: DaydicateViewController {
+    override func viewDidLoad() {
+        view.backgroundColor = .systemGray
+        title = "Profile"
+    }
+    
+    override func commonInit() {
+        setTabBarImage(imageName: "person.fill", title: "Profile")
+    }
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.backgroundColor = .systemBackground
+        
+        let homeVC = HomeViewController()
+        let listVC = ListViewController()
+        let plusVC = GoalFetchedResultsViewController()
+        let rosetteVC = RosetteViewController()
+        let personVC = PersonViewController()
+        
+        let listNC = UINavigationController(rootViewController: listVC)
+        let plusNC = UINavigationController(rootViewController: plusVC)
+        let rosetteNC = UINavigationController(rootViewController: rosetteVC)
+        let personNC = UINavigationController(rootViewController: personVC)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeVC, listNC, plusNC, rosetteNC, personNC]
+        
+        window?.rootViewController = tabBarController
+        
+        tabBarController.tabBar.tintColor = .lightBlue
+        tabBarController.tabBar.isTranslucent = false
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 
