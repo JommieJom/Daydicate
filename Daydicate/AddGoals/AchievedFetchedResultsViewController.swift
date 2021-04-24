@@ -1,41 +1,22 @@
 //
-//  FetchedResultsViewController.swift
+//  AchievedFetchedResultsViewController.swift
 //  Daydicate
 //
-//  Created by Bhanut Sriplakich on 22/4/2564 BE.
+//  Created by Bhanut Sriplakich on 24/4/2564 BE.
 //  Copyright © 2564 Daydicate Dev. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class GoalFetchedResultsViewController: DaydicateViewController {
+class AchievedFetchedResultsViewController: DaydicateViewController {
     
 
     // 1
-    var fetchedResultsController: NSFetchedResultsController<Goal>!
+    var fetchedResultsController: NSFetchedResultsController<Achievement>!
     
-    let viewContext = GoalManager.shared.persistentContainer.viewContext
+    let viewContext = AchievementsManager.shared.persistentContainer.viewContext
     
-    let achievedViewContext = AchievementsManager.shared.persistentContainer.viewContext
-    
-    let textField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textAlignment = .center
-        textField.backgroundColor = .systemFill
-
-        return textField
-    }()
-
-    lazy var addButton: UIButton = {
-        let button = makeButton(withText: "Add")
-        button.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        button.addTarget(self, action: #selector(addButtonPressed), for: .primaryActionTriggered)
-
-        return button
-    }()
 
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -43,13 +24,14 @@ class GoalFetchedResultsViewController: DaydicateViewController {
 
         return tableView
     }()
+    
 
     let cellId = "insertCellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Add Task"
-        setTabBarImage(imageName: "plus.circle.fill", title: "Add Task")
+        title = "done"
+        setTabBarImage(imageName: "rosette", title: "Achievements")
         layout()
         loadSavedData()
         setupTableView()
@@ -62,14 +44,12 @@ class GoalFetchedResultsViewController: DaydicateViewController {
     }
 
     func layout() {
-        navigationItem.title = "Add your Goal"
+        navigationItem.title = "Achievements"
         
         let addStackView = makeHorizontalStackView()
-        addStackView.addArrangedSubview(textField)
-        addStackView.addArrangedSubview(addButton)
+        addStackView.addArrangedSubview(tableView)
 
         view.addSubview(addStackView)
-        view.addSubview(tableView)
 
         addStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3).isActive = true
         addStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 3).isActive = true
@@ -84,7 +64,7 @@ class GoalFetchedResultsViewController: DaydicateViewController {
     // 3
     func loadSavedData() {
         if fetchedResultsController == nil {
-            let request = NSFetchRequest<Goal>(entityName: "Goal")
+            let request = NSFetchRequest<Achievement>(entityName: "Achievement")
             let sort = NSSortDescriptor(key: "name", ascending: false)
             request.sortDescriptors = [sort]
             request.fetchBatchSize = 20
@@ -100,29 +80,20 @@ class GoalFetchedResultsViewController: DaydicateViewController {
             print("Fetch failed")
         }
     }
-    
-    
-    // MARK: - Actions
-    @objc
-    func addButtonPressed() {
-        guard let name = textField.text else { return }
 
-        // 4 CoreData viewContext > NSFetchRequest > Delegate (us)
-        GoalManager.shared.createGoal(name: name)
-    }
 
 }
 
 // MARK:  - UITableView DataSource
-extension GoalFetchedResultsViewController: UITableViewDataSource {
+extension AchievedFetchedResultsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
 
         // 5
-        // cell.textLabel?.text = goals[indexPath.row]
-        let goal = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = goal.name
+        // cell.textLabel?.text = achievements[indexPath.row]
+        let achievement = fetchedResultsController.object(at: indexPath)
+        cell.textLabel?.text = achievement.name
 
         cell.accessoryType = UITableViewCell.AccessoryType.none
         
@@ -133,13 +104,13 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
 
         let action = UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completionHandler) in
             // 6 Deletion is now a two step process.
-//            self.goals.remove(at: indexPath.row)
+//            self.achievements.remove(at: indexPath.row)
 //            tableView.deleteRows(at: [indexPath], with: .fade)
             
             // 6a. Delete CoreData here
-            let goal = self.fetchedResultsController.object(at: indexPath)
-            GoalManager.shared.persistentContainer.viewContext.delete(goal)
-            GoalManager.shared.saveContext()
+            let achievement = self.fetchedResultsController.object(at: indexPath)
+            AchievementsManager.shared.persistentContainer.viewContext.delete(achievement)
+            AchievementsManager.shared.saveContext()
         })
         action.image = makeSymbolImage(systemName: "trash")
 
@@ -148,41 +119,6 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
         return configuration
     }
     
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-        let action = UIContextualAction(style: .normal, title: "Achievements", handler: { (action, view, completionHandler) in
-            // Do something with achievements
-            
-            let goal = self.fetchedResultsController.object(at: indexPath)
-            
-            
-            var strGoal = "\(goal)"
-            
-            // AAAAA
-            let start = strGoal.index(strGoal.startIndex, offsetBy: 143)
-            let end = strGoal.index(strGoal.endIndex, offsetBy: -5)
-            let range = start..<end
-
-            let mySubstring = strGoal[range]
-            
-            
-            print("number = \(mySubstring)")
-            
-            AchievementsManager.shared.createAchievement(name: String(mySubstring))
-            
-            GoalManager.shared.persistentContainer.viewContext.delete(goal)
-            GoalManager.shared.saveContext()
-        })
-        
-        
-        action.image = makeSymbolImage(systemName: "checkmark")
-        action.backgroundColor = .markGreen
-
-        let configuration = UISwipeActionsConfiguration(actions: [action])
-
-        return configuration
-    }
-
     // 7
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section]
@@ -192,7 +128,7 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
 }
 
 // 8
-extension GoalFetchedResultsViewController: NSFetchedResultsControllerDelegate {
+extension AchievedFetchedResultsViewController: NSFetchedResultsControllerDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
@@ -217,13 +153,14 @@ extension GoalFetchedResultsViewController: NSFetchedResultsControllerDelegate {
             break
         }
     }
-    
+     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates() // c
     }
 }
 
 // MARK:  - UITableView Delegate
-extension GoalFetchedResultsViewController: UITableViewDelegate {
+extension AchievedFetchedResultsViewController: UITableViewDelegate {
 
 }
+

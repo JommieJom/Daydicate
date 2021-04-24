@@ -11,6 +11,9 @@
 		4814A63F2626DAB400F2B107 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814A63E2626DAB400F2B107 /* HomeViewController.swift */; };
 		4814A6442626DAB500F2B107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4814A6432626DAB500F2B107 /* Assets.xcassets */; };
 		4814A6472626DAB500F2B107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814A6452626DAB500F2B107 /* LaunchScreen.storyboard */; };
+		4816F1C9263412FD006830B6 /* AchievedFetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816F1C8263412FD006830B6 /* AchievedFetchedResultsViewController.swift */; };
+		4816F1CB26341A9D006830B6 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816F1CA26341A9D006830B6 /* AchievementsManager.swift */; };
+		4816F1D426341C93006830B6 /* AchievementModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4816F1D226341C93006830B6 /* AchievementModel.xcdatamodeld */; };
 		484E3F3E262810A000EDAA05 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E3F3D262810A000EDAA05 /* Factories.swift */; };
 		484E3F41262813CE00EDAA05 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */; };
 		485493DA262B2DEA00A31686 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485493D9262B2DEA00A31686 /* TileViewController.swift */; };
@@ -35,6 +38,9 @@
 		4814A6432626DAB500F2B107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4814A6462626DAB500F2B107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4814A6482626DAB500F2B107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4816F1C8263412FD006830B6 /* AchievedFetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievedFetchedResultsViewController.swift; sourceTree = "<group>"; };
+		4816F1CA26341A9D006830B6 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		4816F1D326341C93006830B6 /* AchievementModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AchievementModel.xcdatamodel; sourceTree = "<group>"; };
 		484E3F3D262810A000EDAA05 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		484E3F40262813CE00EDAA05 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		485493D9262B2DEA00A31686 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
@@ -82,13 +88,13 @@
 		4814A6392626DAB400F2B107 /* Daydicate */ = {
 			isa = PBXGroup;
 			children = (
+				4814A64E2626DB1500F2B107 /* Files */,
+				4814A63A2626DAB400F2B107 /* AppDelegate.swift */,
+				484E3F3D262810A000EDAA05 /* Factories.swift */,
 				484E3F3F2628134400EDAA05 /* Home */,
 				48FE072C2630FE2A009D185F /* StarRewards */,
 				48EE67EB262EBC6E00F70982 /* Rewards */,
 				48FE073326310E0B009D185F /* AddGoals */,
-				4814A64E2626DB1500F2B107 /* Files */,
-				4814A63A2626DAB400F2B107 /* AppDelegate.swift */,
-				484E3F3D262810A000EDAA05 /* Factories.swift */,
 			);
 			path = Daydicate;
 			sourceTree = "<group>";
@@ -142,6 +148,9 @@
 				488C275F263169F100348833 /* GoalFetchedResultsViewController.swift */,
 				488C276326316A5300348833 /* GoalManager.swift */,
 				488C276526316A8500348833 /* GoalModel.xcdatamodeld */,
+				4816F1C8263412FD006830B6 /* AchievedFetchedResultsViewController.swift */,
+				4816F1CA26341A9D006830B6 /* AchievementsManager.swift */,
+				4816F1D226341C93006830B6 /* AchievementModel.xcdatamodeld */,
 			);
 			path = AddGoals;
 			sourceTree = "<group>";
@@ -217,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				488C276726316A8500348833 /* GoalModel.xcdatamodeld in Sources */,
+				4816F1CB26341A9D006830B6 /* AchievementsManager.swift in Sources */,
 				488C2760263169F100348833 /* GoalFetchedResultsViewController.swift in Sources */,
 				487488F92630378300C5892B /* RewardsGraphView.swift in Sources */,
 				484E3F41262813CE00EDAA05 /* HomeHeaderView.swift in Sources */,
@@ -233,6 +243,8 @@
 				48FE073226310315009D185F /* StarRewardsView.swift in Sources */,
 				48EE67F1262EC00900F70982 /* BalanceRewardsView.swift in Sources */,
 				48EE67ED262EBCEA00F70982 /* RewardsTileViewController.swift in Sources */,
+				4816F1C9263412FD006830B6 /* AchievedFetchedResultsViewController.swift in Sources */,
+				4816F1D426341C93006830B6 /* AchievementModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +434,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		4816F1D226341C93006830B6 /* AchievementModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4816F1D326341C93006830B6 /* AchievementModel.xcdatamodel */,
+			);
+			currentVersion = 4816F1D326341C93006830B6 /* AchievementModel.xcdatamodel */;
+			path = AchievementModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		488C276526316A8500348833 /* GoalModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

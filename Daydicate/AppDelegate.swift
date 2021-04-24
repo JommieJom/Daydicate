@@ -33,22 +33,11 @@ class DaydicateViewController: UIViewController{
 class ListViewController: DaydicateViewController {
     override func viewDidLoad() {
         view.backgroundColor = .systemPink
-        title = "List"
+        title = "List OMG"
     }
     
     override func commonInit() {
         setTabBarImage(imageName: "list.bullet", title: "List")
-    }
-}
-
-class PlusViewController: DaydicateViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-        title = "Add Task"
-    }
-    
-    override func commonInit() {
-        setTabBarImage(imageName: "plus.circle.fill", title: "Add Task")
     }
 }
 
@@ -90,16 +79,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = HomeViewController()
         let listVC = ListViewController()
         let plusVC = GoalFetchedResultsViewController()
-        let rosetteVC = RosetteViewController()
+        let rosetteVC = AchievedFetchedResultsViewController()
         let personVC = PersonViewController()
         
         let listNC = UINavigationController(rootViewController: listVC)
-        let plusNC = UINavigationController(rootViewController: plusVC)
-        let rosetteNC = UINavigationController(rootViewController: rosetteVC)
         let personNC = UINavigationController(rootViewController: personVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [homeVC, listNC, plusNC, rosetteNC, personNC]
+        tabBarController.viewControllers = [homeVC, listNC, plusVC, rosetteVC, personNC]
         
         window?.rootViewController = tabBarController
         

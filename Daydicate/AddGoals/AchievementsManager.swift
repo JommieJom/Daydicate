@@ -1,20 +1,20 @@
 //
-//  GoalManager.swift
+//  AchievementsManager.swift
 //  Daydicate
 //
-//  Created by Bhanut Sriplakich on 22/4/2564 BE.
+//  Created by Bhanut Sriplakich on 24/4/2564 BE.
 //  Copyright © 2564 Daydicate Dev. All rights reserved.
 //
 
 import CoreData
 
-struct GoalManager {
+struct AchievementsManager {
 
-    static let shared = GoalManager()
+    static let shared = AchievementsManager()
 
     let persistentContainer: NSPersistentContainer = {
 
-        let container = NSPersistentContainer(name: "GoalModel")
+        let container = NSPersistentContainer(name: "AchievementModel")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error {
                 fatalError("Loading of store failed \(error)")
@@ -25,15 +25,15 @@ struct GoalManager {
     }()
 
     @discardableResult
-    func createGoal(name: String) -> Goal? {
+    func createAchievement(name: String) -> Achievement? {
         let context = persistentContainer.viewContext
         
-        let goal = NSEntityDescription.insertNewObject(forEntityName: "Goal", into: context) as! Goal // NSManagedObject
-        goal.name = name
+        let achievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: context) as! Achievement // NSManagedObject
+        achievement.name = name
 
         do {
             try context.save()
-            return goal
+            return achievement
         } catch let createError {
             print("Failed to create: \(createError)")
         }
@@ -41,14 +41,14 @@ struct GoalManager {
         return nil
     }
 
-    func fetchGoals() -> [Goal]? {
+    func fetchAchievement() -> [Achievement]? {
         let context = persistentContainer.viewContext
 
-        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        let fetchRequest = NSFetchRequest<Achievement>(entityName: "Achievement")
 
         do {
-            let goals = try context.fetch(fetchRequest)
-            return goals
+            let achievements = try context.fetch(fetchRequest)
+            return achievements
         } catch let fetchError {
             print("Failed to fetch companies: \(fetchError)")
         }
@@ -56,29 +56,12 @@ struct GoalManager {
         return nil
     }
     
-    func createFetchRequest() -> NSFetchRequest<Goal> {
-        return NSFetchRequest<Goal>(entityName: "Goal")
+    func createFetchRequest() -> NSFetchRequest<Achievement> {
+        return NSFetchRequest<Achievement>(entityName: "Achievement")
     }
 
-    func fetchGol(withName name: String) -> Goal? {
-        let context = persistentContainer.viewContext
 
-        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
-        fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-
-        do {
-            let goalss = try context.fetch(fetchRequest)
-            return goalss.first
-        } catch let fetchError {
-            print("Failed to fetch: \(fetchError)")
-        }
-
-        return nil
-    }
-    
-
-    func updateGoal(goal: Goal) {
+    func updateAchievement(achievement: Achievement) {
         let context = persistentContainer.viewContext
 
         do {
@@ -88,9 +71,9 @@ struct GoalManager {
         }
     }
 
-    func deleteGoal(goal: Goal) {
+    func deleteAchievement(achievement: Achievement) {
         let context = persistentContainer.viewContext
-        context.delete(goal)
+        context.delete(achievement)
 
         do {
             try context.save()
