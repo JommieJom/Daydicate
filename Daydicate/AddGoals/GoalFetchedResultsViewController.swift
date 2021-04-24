@@ -156,10 +156,10 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
             let goal = self.fetchedResultsController.object(at: indexPath)
             
             
-            var strGoal = "\(goal)"
+            let strGoal = "\(goal)"
             
-            // AAAAA
-            let start = strGoal.index(strGoal.startIndex, offsetBy: 143)
+            
+            let start = strGoal.index(strGoal.startIndex, offsetBy: 144)
             let end = strGoal.index(strGoal.endIndex, offsetBy: -5)
             let range = start..<end
 

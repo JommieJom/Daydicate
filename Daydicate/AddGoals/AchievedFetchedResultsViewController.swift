@@ -42,6 +42,7 @@ class AchievedFetchedResultsViewController: DaydicateViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
+    
 
     func layout() {
         navigationItem.title = "Achievements"
@@ -59,6 +60,7 @@ class AchievedFetchedResultsViewController: DaydicateViewController {
         tableView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1).isActive = true
         view.trailingAnchor.constraint(equalToSystemSpacingAfter: tableView.trailingAnchor, multiplier: 1).isActive = true
         view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: tableView.bottomAnchor, multiplier: 1).isActive = true
+        
     }
 
     // 3
