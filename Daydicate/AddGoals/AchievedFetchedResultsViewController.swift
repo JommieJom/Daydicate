@@ -95,6 +95,9 @@ extension AchievedFetchedResultsViewController: UITableViewDataSource {
         // 5
         // cell.textLabel?.text = achievements[indexPath.row]
         let achievement = fetchedResultsController.object(at: indexPath)
+        // adding ...
+        cell.imageView?.image = UIImage(named: "newbadge")
+
         cell.textLabel?.text = achievement.name
 
         cell.accessoryType = UITableViewCell.AccessoryType.none

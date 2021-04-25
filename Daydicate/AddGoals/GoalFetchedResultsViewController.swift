@@ -19,6 +19,8 @@ class GoalFetchedResultsViewController: DaydicateViewController {
     
     let achievedViewContext = AchievementsManager.shared.persistentContainer.viewContext
     
+    
+    
     let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -108,7 +110,10 @@ class GoalFetchedResultsViewController: DaydicateViewController {
         guard let name = textField.text else { return }
 
         // 4 CoreData viewContext > NSFetchRequest > Delegate (us)
-        GoalManager.shared.createGoal(name: name)
+        if name != "" {
+            GoalManager.shared.createGoal(name: name)
+        }
+        
     }
 
 }
@@ -157,7 +162,6 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
             
             
             let strGoal = "\(goal)"
-            
             
             let start = strGoal.index(strGoal.startIndex, offsetBy: 144)
             let end = strGoal.index(strGoal.endIndex, offsetBy: -5)

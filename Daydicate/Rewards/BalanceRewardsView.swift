@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class BalanceRewardsView: UIView {
     
     let pointsLabel = UILabel()
     let starView = makeSymbolImageView(systemName: "rosette")
     let starBalanceLabel = UILabel()
+    
+    
+    var countAchievements = AchievementsManager.shared.countContext()
+    
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -24,10 +29,12 @@ class BalanceRewardsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     func style() {
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         pointsLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle).bold()
-        pointsLabel.text = "12"
+        pointsLabel.text = String(countAchievements)
         
         starView.translatesAutoresizingMaskIntoConstraints = false
         starView.tintColor = .starYellow

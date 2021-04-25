@@ -91,4 +91,12 @@ struct AchievementsManager {
             }
         }
     }
+    
+    func countContext() -> Int {
+        let context = persistentContainer.viewContext
+        var countA: Int?
+        countA = try? context.count(for: NSFetchRequest(entityName: "Achievement"))
+        
+        return countA!
+    }
 }
