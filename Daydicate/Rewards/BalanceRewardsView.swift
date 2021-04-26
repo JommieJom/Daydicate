@@ -16,7 +16,7 @@ class BalanceRewardsView: UIView {
     let starBalanceLabel = UILabel()
     
     
-    var countAchievements = AchievementsManager.shared.countContext()
+    var countStar = AchievementsManager.shared.countContext()
     
     
     override init(frame: CGRect) {
@@ -34,7 +34,7 @@ class BalanceRewardsView: UIView {
     func style() {
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         pointsLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle).bold()
-        pointsLabel.text = String(countAchievements)
+        pointsLabel.text = String(countStar)
         
         starView.translatesAutoresizingMaskIntoConstraints = false
         starView.tintColor = .starYellow

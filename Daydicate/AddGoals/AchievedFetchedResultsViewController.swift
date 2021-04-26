@@ -17,6 +17,8 @@ class AchievedFetchedResultsViewController: DaydicateViewController {
     
     let viewContext = AchievementsManager.shared.persistentContainer.viewContext
     
+    var aCount = 0
+    
 
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -112,10 +114,15 @@ extension AchievedFetchedResultsViewController: UITableViewDataSource {
 //            self.achievements.remove(at: indexPath.row)
 //            tableView.deleteRows(at: [indexPath], with: .fade)
             
-            // 6a. Delete CoreData here
+            // 6a. Delete CoreData
             let achievement = self.fetchedResultsController.object(at: indexPath)
             AchievementsManager.shared.persistentContainer.viewContext.delete(achievement)
             AchievementsManager.shared.saveContext()
+            
+            // update counting
+            self.aCount = AchievementsManager.shared.countContext()
+            
+            
         })
         action.image = makeSymbolImage(systemName: "trash")
 

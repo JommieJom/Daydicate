@@ -12,6 +12,7 @@ struct AchievementsManager {
 
     static let shared = AchievementsManager()
 
+
     let persistentContainer: NSPersistentContainer = {
 
         let container = NSPersistentContainer(name: "AchievementModel")
@@ -92,11 +93,17 @@ struct AchievementsManager {
         }
     }
     
+    
     func countContext() -> Int {
         let context = persistentContainer.viewContext
         var countA: Int?
         countA = try? context.count(for: NSFetchRequest(entityName: "Achievement"))
         
+        
+        print("\(countA)")
+        
         return countA!
     }
+    
+    
 }

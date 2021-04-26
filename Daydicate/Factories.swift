@@ -100,3 +100,4 @@ func makeSymbolImage(systemName: String) -> UIImage? {
 
     return image
 }
+

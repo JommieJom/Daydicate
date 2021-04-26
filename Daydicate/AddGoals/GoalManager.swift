@@ -11,6 +11,7 @@ import CoreData
 struct GoalManager {
 
     static let shared = GoalManager()
+    
 
     let persistentContainer: NSPersistentContainer = {
 

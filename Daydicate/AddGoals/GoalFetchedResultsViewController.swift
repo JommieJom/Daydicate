@@ -173,6 +173,7 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
             print("number = \(mySubstring)")
             
             AchievementsManager.shared.createAchievement(name: String(mySubstring))
+            AchievementsManager.shared.countContext()
             
             GoalManager.shared.persistentContainer.viewContext.delete(goal)
             GoalManager.shared.saveContext()
