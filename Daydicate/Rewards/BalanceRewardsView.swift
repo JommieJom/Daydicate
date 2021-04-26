@@ -15,14 +15,34 @@ class BalanceRewardsView: UIView {
     let starView = makeSymbolImageView(systemName: "rosette")
     let starBalanceLabel = UILabel()
     
+    static let shared = BalanceRewardsView()
+    
+    func newCount() -> Int{
+        var trueCount = AchievementsManager.shared.countContext()
+        print("newCount = \(trueCount)")
+        return trueCount
+    }
     
     var countStar = AchievementsManager.shared.countContext()
+    
+    var timer = Timer()
+
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.style), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateCounting(){
+        NSLog("counting..")
+    }
     
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        style()
+        scheduledTimerWithTimeInterval()
+        //style()
         layout()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -31,10 +51,12 @@ class BalanceRewardsView: UIView {
     
     
     
-    func style() {
+    
+    @objc func style() {
         pointsLabel.translatesAutoresizingMaskIntoConstraints = false
         pointsLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle).bold()
-        pointsLabel.text = String(countStar)
+        pointsLabel.text = String(newCount())
+        //print("In style \(countStar)")
         
         starView.translatesAutoresizingMaskIntoConstraints = false
         starView.tintColor = .starYellow

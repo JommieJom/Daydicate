@@ -99,9 +99,6 @@ struct AchievementsManager {
         var countA: Int?
         countA = try? context.count(for: NSFetchRequest(entityName: "Achievement"))
         
-        
-        print("\(countA)")
-        
         return countA!
     }
     

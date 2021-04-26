@@ -20,7 +20,6 @@ class GoalFetchedResultsViewController: DaydicateViewController {
     let achievedViewContext = AchievementsManager.shared.persistentContainer.viewContext
     
     
-    
     let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -170,10 +169,9 @@ extension GoalFetchedResultsViewController: UITableViewDataSource {
             let mySubstring = strGoal[range]
             
             
-            print("number = \(mySubstring)")
-            
             AchievementsManager.shared.createAchievement(name: String(mySubstring))
-            AchievementsManager.shared.countContext()
+            BalanceRewardsView.shared.newCount()
+            
             
             GoalManager.shared.persistentContainer.viewContext.delete(goal)
             GoalManager.shared.saveContext()

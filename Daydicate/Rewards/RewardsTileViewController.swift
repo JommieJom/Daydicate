@@ -15,28 +15,29 @@ class RewardsTileViewController: UIViewController {
     
     var timer = Timer()
     
-    //var updateA : Int?
     
     
     func scheduledTimerWithTimeInterval(){
         // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+        
     }
 
-    @objc func updateCounting() -> Int {
-        let countA = AchievementsManager.shared.countContext()
-        return countA
+    @objc func updateCounting() {
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //scheduledTimerWithTimeInterval()
+        
+        scheduledTimerWithTimeInterval()
     
         rewardsTileView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(rewardsTileView)
-        //rewardsTileView.balanceRewardsView.pointsLabel.text = "\(updateA)"
+        
+        //rewardsTileView.balanceRewardsView.pointsLabel.text = "\(myGlobalCount)"
         
         NSLayoutConstraint.activate([
             rewardsTileView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

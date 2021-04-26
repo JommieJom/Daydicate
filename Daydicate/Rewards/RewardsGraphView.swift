@@ -120,7 +120,7 @@ class RewardsGraphView: UIView {
             ctx.cgContext.addLine(to: CGPoint(x: pointsConsumedEnd, y: yOffset))
             ctx.cgContext.strokePath()
             
-            // Draw green indicator
+            // Draw blue indicator
             let indicatorX = pointsConsumedEnd - 8
             let indicatorY = yOffset - 36
             let star = UIImage(named: "pin")

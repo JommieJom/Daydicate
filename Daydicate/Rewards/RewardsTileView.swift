@@ -37,6 +37,7 @@ extension RewardsTileView {
         rewardsGraphView.translatesAutoresizingMaskIntoConstraints = false
         starRewardsView.translatesAutoresizingMaskIntoConstraints = false
         
+        
         detailsButton = makeClearButton(withText: "Details")
         
         makeRewardsOptionButton()

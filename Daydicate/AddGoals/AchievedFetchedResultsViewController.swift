@@ -17,8 +17,6 @@ class AchievedFetchedResultsViewController: DaydicateViewController {
     
     let viewContext = AchievementsManager.shared.persistentContainer.viewContext
     
-    var aCount = 0
-    
 
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -120,7 +118,7 @@ extension AchievedFetchedResultsViewController: UITableViewDataSource {
             AchievementsManager.shared.saveContext()
             
             // update counting
-            self.aCount = AchievementsManager.shared.countContext()
+            BalanceRewardsView.shared.newCount()
             
             
         })
